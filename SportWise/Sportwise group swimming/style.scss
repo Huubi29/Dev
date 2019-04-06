@@ -1,0 +1,601 @@
+$cl-primary: #ff6262;
+$cl-secondary: #fff;
+$ff-primary: "Montserrat";
+$ff-secondary: "Oswald";
+
+body {
+  position: relative;
+  margin: 0;
+  font-family: $ff-primary;
+}
+
+.mobile-scroll-lock {
+  overflow: hidden;
+  z-index: 1;
+}
+
+.nav {
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: $cl-secondary;
+    @media (min-width: 1024px) {
+      max-width: 1350px;
+      margin: 0 auto;
+    }
+
+    .logo-colors {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .navigation {
+      display: flex;
+      align-items: center;
+
+      .navigation-elements {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        list-style: none;
+        position: fixed;
+        margin-top: 0;
+        right: 0;
+        top: 96px;
+        height: calc(100% - 96px);
+        width: 100%;
+        background-color: $cl-primary;
+        transition: 0.4s;
+        transform: translateX(100%);
+        @media (min-width: 1024px) {
+          display: flex;
+          margin-top: 16px;
+          flex-direction: row;
+          transform: translateX(0);
+          position: unset;
+          background-color: $cl-secondary;
+        }
+      }
+
+      .nav-active {
+        transform: translateX(0);
+      }
+
+      .navigation-element {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s;
+        @media (min-width: 1024px) {
+          margin: 5px 25px;
+          font-size: 16px;
+          width: auto;
+          height: auto;
+        }
+
+        &:hover {
+          background-color: $cl-secondary;
+
+          a {
+            color: $cl-primary;
+          }
+        }
+
+        a {
+          height: 100%;
+          width: 100%;
+          color: $cl-secondary;
+          text-decoration: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          @media (min-width: 1024px) {
+            text-decoration: none;
+            color: black;
+            transition: 0.3s;
+
+            &:hover {
+              color: $cl-primary;
+            }
+          }
+        }
+      }
+
+      .burger {
+        display: block;
+        cursor: pointer;
+        @media (min-width: 1024px) {
+          display: none;
+        }
+
+        .row {
+          width: 25px;
+          height: 3px;
+          margin: 5px;
+          background-color: $cl-primary;
+        }
+      }
+    }
+  }
+}
+
+.page-content {
+  .wrapper {
+    display: flex;
+    padding: 15px 15px 100px;
+    @media (min-width: 768px) {
+      max-width: 1500px;
+      margin: 0 auto;
+    }
+
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      max-width: 750px;
+
+      .typo-main {
+        p {
+          font-size: 18px;
+          line-height: 28px;
+          @media (min-width: 768px) {
+            font-size: 24px;
+            line-height: 38px;
+          }
+        }
+      }
+
+      .theme {
+        font-size: 25px;
+        padding-bottom: 30px;
+        border-bottom: 5px solid $cl-primary;
+        @media (min-width: 768px) {
+          width: 85%;
+        }
+
+        h2 {
+          margin-bottom: 0;
+          font-family: $ff-secondary;
+        }
+      }
+
+      .contact-to {
+        margin-bottom: 45px;
+      }
+    }
+
+    .img-content {
+      display: none;
+      @media (min-width: 768px) {
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 850px;
+        height: 900px;
+        z-index: -1;
+        background-size: cover;
+        background-image: url("http://intr1201.interpages.pl/wp-content/uploads/2019/01/athletes-competition-fitness-1263349-e1547142031764.png");
+      }
+    }
+  }
+}
+
+.box-shows {
+  .wrapper {
+    padding: 15px 30px;
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 1024px) {
+      max-width: 1500px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 20px;
+      text-align: center;
+      max-width: 500px;
+      height: 100%;
+      margin: 0 auto;
+      max-height: 150px;
+      @media (min-width: 768px) {
+        font-size: 36px;
+      }
+      @media (min-width: 1024px) {
+        font-size: 55px;
+        max-width: 680px;
+      }
+    }
+
+    .ul-container {
+      @media (min-width: 768px) {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .list-container {
+        padding: 0;
+        @media (min-width: 768px) {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .list-item {
+          display: flex;
+          flex-direction: column;
+          list-style: none;
+          justify-content: center;
+          align-items: center;
+          margin: 80px 0;
+          padding: 30px 0;
+          transition: 0.3s;
+
+          &:hover {
+            background-color: $cl-primary;
+
+            p {
+              color: white;
+            }
+
+            img {
+              filter: invert(1);
+            }
+          }
+          @media (min-width: 768px) {
+            width: 30%;
+            margin: 80px 5px;
+            justify-content: center;
+            min-width: 340px;
+          }
+
+          p {
+            text-align: center;
+            margin-top: 28px;
+            font-weight: 600;
+            color: #212121;
+            max-width: 380px;
+            font-size: 20px;
+            line-height: 35px;
+            width: 65%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.learning-process {
+  .wrapper {
+    padding: 15px 30px;
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 1024px) {
+      max-width: 1500px;
+      margin: 0 auto;
+    }
+
+    .theme {
+      font-size: 20px;
+      text-align: center;
+      max-width: 500px;
+      height: 100%;
+      margin: 0 auto;
+      max-height: 150px;
+      @media (min-width: 768px) {
+        font-size: 36px;
+      }
+      @media (min-width: 1024px) {
+        font-size: 50px;
+        max-width: 680px;
+      }
+    }
+
+    .boxes {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      @media (min-width: 1024px) {
+        flex-direction: row;
+        align-items: baseline;
+      }
+
+      .box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 60px 0;
+        @media (min-width: 1024px) {
+          margin: 60px 20px;
+        }
+
+        .number {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 18px;
+          font-weight: 700;
+          height: 30px;
+          width: 30px;
+          border: 5px solid $cl-primary;
+          border-radius: 50%;
+        }
+
+        .image {
+          margin: 60px 0 40px;
+        }
+
+        .typo {
+          text-align: center;
+          font-weight: 600;
+          text-transform: uppercase;
+          max-width: 350px;
+        }
+      }
+    }
+  }
+}
+
+.where-train {
+  display: block;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 15px 30px;
+    @media (min-width: 1024px) {
+      flex-direction: row;
+      max-width: 1500px;
+      margin: 50px auto;
+      justify-content: flex-start;
+    }
+
+    .where-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 50px;
+      background-color: #fa4b4b;
+      -webkit-box-shadow: 1px 4px 28px 3px rgba(105,103,105,0.46);
+      -moz-box-shadow: 1px 4px 28px 3px rgba(105,103,105,0.46);
+      box-shadow: 1px 4px 28px 3px rgba(105,103,105,0.46);
+      @media (min-width: 1024px) {
+        max-height: 480px;
+      }
+
+      h3 {
+        font-size: 28px;
+        margin: 24px 0;
+        color: white;
+      }
+
+      p {
+        font-size: 16px;
+        margin: 24px 0;
+        max-width: 450px;
+        width: 70%;
+        color: white;
+        margin-bottom: 35px;
+      }
+
+      .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        width: 240px;
+        height: 75px;
+        font-size: 18px;
+        color: #fa4b4b;
+        text-decoration: none;
+      }
+    }
+
+    .where-map {
+      @media (min-width: 1024px) {
+        background-image: url("http://intr1201.interpages.pl/wp-content/themes/sportwise/assets/images/find-us01.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+        width: 45%;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+  }
+}
+
+.join-to-us {
+  background-image: url("http://intr1201.interpages.pl/wp-content/themes/sportwise/assets/images/cta.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 100px;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 15px;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      h2 {
+        color: white;
+        text-align: center;
+        width: 95%;
+        font-size: 30px;
+        @media (min-width: 768px) {
+          font-size: 38px;
+        }
+        @media (min-width: 1024px) {
+          font-size: 52px;
+        }
+      }
+
+      p {
+        color: white;
+        text-align: center;
+        width: 70%;
+        @media (min-width: 768px) {
+          width: 30%;
+        }
+      }
+
+      .buttons {
+        display: flex;
+        flex-direction: column;
+        margin: 20px 0;
+        @media (min-width: 768px) {
+          flex-direction: row;
+        }
+
+        .btn {
+          padding: 15px 25px;
+          margin: 20px;
+          text-align: center;
+          text-decoration: none;
+          width: 252px;
+
+          &:nth-child(1) {
+            transition: 0.3s;
+            padding: 12px 22px;
+            color: $cl-primary;
+            background-color: white;
+            border: solid 3px white;
+            min-width: 252px;
+
+            &:hover {
+              color: white;
+              background-color: $cl-primary;
+            }
+          }
+          background-color: $cl-primary;
+          padding: 12px 22px;
+          border: solid 3px white;
+          color: white;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.sponsor {
+  .wrapper {
+    padding: 30px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    @media (min-width: 768px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      max-width: 1700px;
+      margin: 0 auto;
+    }
+
+    .img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 100%;
+        max-width: 320px;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: #333333;
+
+  .wrapper {
+    padding: 30px 15px;
+    display: flex;
+    justify-content: center;
+    @media (min-width: 1024px) {
+      max-width: 1500px;
+      margin: 0 auto;
+    }
+
+    .ul-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      @media (min-width: 768px) {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        width: 100%;
+        justify-content: space-around;
+      }
+
+      .list-item-container {
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+        padding: 0;
+
+        li {
+          list-style: none;
+          padding: 10px 0;
+          text-align: center;
+          @media (min-width: 768px) {
+            text-align: left;
+          }
+
+          a {
+            color: #ababab;
+            text-decoration: none;
+          }
+
+          span {
+            color: $cl-secondary;
+            font-size: 30px;
+            padding: 20px 0;
+          }
+        }
+      }
+    }
+  }
+
+  .copy {
+    background-color: black;
+
+    .wrapper {
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .logo-colors {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .copy-typo {
+          color: #c9c9c9;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
