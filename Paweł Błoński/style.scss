@@ -1,0 +1,869 @@
+$cl-primary: black;
+$cl-secondary: #ff6c00;
+$ff-primary: 'Ubuntu', sans-serif;
+$ff-secondary: 'Roboto', sans-serif;
+
+body {
+  margin: 0;
+  font-family: $ff-secondary;
+}
+
+.mobile-scroll-lock {
+  overflow: hidden;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background-color: white;
+  @media(min-width: 1024px) {
+    position: static;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    @media (min-width: 1024px) {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 15px 15px 30px;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .logo {
+      img {
+        width: 150px;
+        @media (min-width: 475px) {
+          width: 200px;
+        }
+        @media (min-width: 768px) {
+          width: 240px;
+        }
+        @media (min-width: 1024px) {
+          width: 270px;
+        }
+      }
+    }
+
+    .header-about {
+      display: none;
+      @media (min-width: 1024px) {
+        display: flex;
+        font-size: 15px;
+        line-height: 1.3rem;
+        max-width: 480px;
+        font-weight: 700;
+      }
+    }
+
+    .header-social {
+      display: none;
+      @media (min-width: 1024px) {
+        display: flex;
+        flex-direction: column;
+
+        .social {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          padding-bottom: 5px;
+
+          .blog {
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 24px;
+            padding: 5px 14px;
+            border-radius: 50px;
+            background-color: $cl-secondary;
+            color: white;
+          }
+        }
+
+        .number {
+          font-size: 20px;
+          font-weight: 700;
+        }
+      }
+    }
+
+    .burger {
+      display: block;
+      cursor: pointer;
+      @media (min-width: 1024px) {
+        display: none;
+      }
+
+      .row {
+        width: 25px;
+        height: 3px;
+        margin: 5px;
+        background-color: $cl-secondary;
+        @media (min-width: 768px) {
+          width: 35px;
+          height: 6px;
+          margin: 6px;
+        }
+      }
+    }
+  }
+}
+
+.nav {
+  background-color: $cl-primary;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    @media (min-width: 1024px) {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: inherit;
+    }
+
+    .nav-elements {
+      display: flex;
+      position: fixed;
+      top: 91px;
+      right: 0;
+      flex-direction: column;
+      background-color: $cl-primary;
+      width: 100%;
+      height: calc(100% - 91px);
+      list-style: none;
+      justify-content: space-around;
+      align-items: center;
+      padding: 0;
+      transition: 0.3s;
+      transform: translateY(-180%);
+      z-index: 3;
+      @media (min-width: 1024px) {
+        list-style: none;
+        position: unset;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        transform: translateY(0);
+      }
+
+      .nav-element {
+        a {
+          width: 100%;
+          height: 100%;
+          padding: 10px 20px;
+          text-decoration: none;
+          color: white;
+          letter-spacing: 0.6px;
+          transition: 0.2s;
+          font-weight: 600;
+          @media (min-width: 1024px) {
+            padding: 0;
+            width: auto;
+            height: auto;
+          }
+
+          &:hover {
+            color: $cl-secondary;
+          }
+        }
+      }
+    }
+
+    .nav-active {
+      transform: translateY(0);
+      margin-top: 0;
+    }
+  }
+}
+
+.pictures-slide {
+  background-color: $cl-primary;
+
+  .picture-slide-wrapper {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+
+    .slide-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .left-arrow-slide {
+      position: absolute;
+      height: 40px;
+      width: 40px;
+      background-color: white;
+      top: 190px;
+      left: 1px;
+      cursor: pointer;
+      background-image: url("https://pawelblonski.pl/wp-content/themes/pb2018/images/arrow.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: 2;
+      @media (min-width: 768px) {
+        height: 60px;
+        width: 60px;
+      }
+    }
+
+    .right-arrow-slide {
+      position: absolute;
+      height: 40px;
+      width: 40px;
+      background-color: white;
+      top: 190px;
+      right: 1px;
+      cursor: pointer;
+      background-image: url("https://pawelblonski.pl/wp-content/themes/pb2018/images/arrow.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      transform: rotate(180deg);
+      z-index: 2;
+      @media (min-width: 768px) {
+        height: 60px;
+        width: 60px;
+      }
+    }
+  }
+
+  .bottom-pic {
+    background-color: $cl-primary;
+
+    h2 {
+      color: white;
+      font-size: 20px;
+      text-align: center;
+      padding: 0 0 15px;
+      margin: 0;
+    }
+  }
+}
+
+.offer {
+  .wrapper {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 768px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    @media (min-width: 1024px) {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 15px 0;
+      justify-content: space-between;
+    }
+
+    .offer-box {
+      max-width: 352px;
+      margin: 0 auto;
+
+      &:hover {
+        .box-img {
+          .fig-cap {
+            background-color: rgba(0, 0, 0, 0.6);
+
+            h2 {
+              top: 50px;
+              left: 40px;
+            }
+
+            p {
+              top: 100px;
+              left: 40px;
+            }
+          }
+        }
+      }
+      @media (min-width: 1024px) {
+        margin: 0 0 20px;
+        width: 30%;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+
+        .box-header {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          img {
+            margin-right: 10px;
+          }
+        }
+
+        .box-img {
+          height: 228px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 10px 0;
+          position: relative;
+          overflow: hidden;
+
+          .fig-cap {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            transition: 0.3s;
+
+            h2 {
+              font-size: 28px;
+              color: white;
+              position: absolute;
+              top: -80px;
+              left: -80px;
+              transition: 0.3s;
+            }
+
+            p {
+              font-size: 18px;
+              color: white;
+              width: 70%;
+              position: absolute;
+              top: -80px;
+              left: -80px;
+              transition: 0.3s;
+            }
+          }
+
+          img {
+            width: 100%;
+            max-width: 352px;
+          }
+        }
+
+        .box-article {
+          text-align: left;
+          padding-left: 5px;
+        }
+      }
+    }
+  }
+}
+
+.realizations {
+  .realizations-header {
+    background-color: $cl-primary;
+
+    h2 {
+      font-size: 20px;
+      text-align: center;
+      color: white;
+      padding: 10px 0;
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+
+    .left-arrow-slide-inv {
+      position: absolute;
+      height: 40px;
+      width: 40px;
+      background-color: white;
+      filter: invert(100%);
+      top: 190px;
+      left: 1px;
+      cursor: pointer;
+      background-image: url("https://pawelblonski.pl/wp-content/themes/pb2018/images/arrow.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: 2;
+      @media (min-width: 768px) {
+        height: 60px;
+        width: 60px;
+      }
+    }
+
+    .right-arrow-slide-inv {
+      position: absolute;
+      height: 40px;
+      width: 40px;
+      background-color: white;
+      filter: invert(100%);
+      top: 190px;
+      right: 1px;
+      cursor: pointer;
+      background-image: url("https://pawelblonski.pl/wp-content/themes/pb2018/images/arrow.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      transform: rotate(180deg);
+      z-index: 2;
+      @media (min-width: 768px) {
+        height: 60px;
+        width: 60px;
+      }
+    }
+  }
+
+  .slide-container-second {
+    a {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: black;
+
+      .box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 280px;
+        margin: 20px 60px 0;
+        @media (min-width: 768px) {
+          max-width: 360px;
+        }
+
+        .box-typo {
+          text-align: left;
+
+          h2 {
+            font-size: 18px;
+          }
+
+          p {
+            font-size: 15px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.copy-scenarios {
+  background-color: #f1eae0;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    @media (min-width: 1024px) {
+      max-width: 1180px;
+      margin: 0 auto;
+      align-items: center;
+    }
+
+    .search {
+      display: flex;
+      justify-content: flex-start;
+      background-color: white;
+      border: 2px solid black;
+      position: relative;
+      min-width: 290px;
+      max-width: 350px;
+      margin: 20px auto;
+
+      &::after {
+        content: url("https://pawelblonski.pl/wp-content/themes/pb2018/images/loupe.png");
+        position: absolute;
+        top: -2px;
+        right: -2px;
+        display: block;
+        height: 26px;
+        padding: 3px;
+        background-color: $cl-secondary;
+        border: 2px solid black;
+      }
+
+      h2 {
+        margin: 0;
+        padding: 4px;
+        font-size: 20px;
+      }
+    }
+
+    .article {
+      font-size: 18px;
+      margin: 20px 0;
+      @media (min-width: 1024px) {
+        width: 70%;
+      }
+
+      span {
+        font-weight: 700;
+      }
+    }
+
+    .box-show {
+      display: flex;
+      flex-direction: column;
+      @media (min-width: 1024px) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .box {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0;
+
+        .box-header {
+          text-decoration: none;
+          color: black;
+          font-size: 20px;
+          font-weight: 700;
+          text-align: center;
+          @media (min-width: 1024px) {
+            font-size: 18px;
+          }
+        }
+
+        .box-article {
+          line-height: 1.5rem;
+          @media (min-width: 768px) {
+            width: 70%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.articles-main {
+  .wrapper {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 1024px) {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 15px 0;
+    }
+
+    .article {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: black;
+      @media (min-width: 1024px) {
+        flex-direction: row;
+        margin: 20px 60px;
+        justify-content: space-around;
+      }
+
+      .img-article {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 100%;
+          height: 228px;
+          max-width: 350px;
+          @media (min-width: 1024px) {
+            width: 246px;
+            height: 165px;
+          }
+        }
+      }
+
+      .article-typo {
+        @media (min-width: 1024px) {
+          width: 70%;
+        }
+
+        .theme {
+          h3 {
+            font-size: 20px;
+            @media (min-width: 768px) {
+              font-size: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .btn-container {
+    display: flex;
+    justify-content: flex-end;
+
+    .btn {
+      text-align: center;
+      text-decoration: none;
+      font-weight: 700;
+      color: white;
+      background-color: black;
+      max-width: 150px;
+      padding: 12px;
+    }
+  }
+}
+
+.worked-for-them {
+  .work-header {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $cl-primary;
+
+    h2 {
+      font-size: 20px;
+      margin-left: 15px;
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    position: relative;
+
+    .left-arrow-slide-inv-copy {
+      height: 40px;
+      width: 40px;
+      position: absolute;
+      background-color: white;
+      filter: invert(100%);
+      top: 95px;
+      left: 1px;
+      cursor: pointer;
+      background-image: url("https://pawelblonski.pl/wp-content/themes/pb2018/images/arrow.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: 2;
+      @media (min-width: 768px) {
+        height: 60px;
+        width: 60px;
+      }
+    }
+
+    .right-arrow-slide-inv-copy {
+      position: absolute;
+      height: 40px;
+      width: 40px;
+      background-color: white;
+      filter: invert(100%);
+      top: 95px;
+      right: 1px;
+      cursor: pointer;
+      background-image: url("https://pawelblonski.pl/wp-content/themes/pb2018/images/arrow.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      transform: rotate(180deg);
+      z-index: 2;
+      @media (min-width: 768px) {
+        height: 60px;
+        width: 60px;
+      }
+    }
+  }
+
+  .slide-container-third {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    img {
+      max-width: 230px;
+    }
+
+    .slick-track {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.footer {
+  @media (min-width: 1024px) {
+    border-top: 63px solid $cl-primary;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    @media (min-width: 1024px) {
+      max-width: 1160px;
+      margin: 0 auto;
+      flex-direction: row;
+      justify-content: space-between;
+      position: relative;
+      top: -78px;
+    }
+
+    .footer-box {
+      display: flex;
+      flex-direction: column;
+      @media (min-width: 1024px) {
+        width: 33.3%;
+      }
+
+      .footer-header {
+        font-size: 20px;
+        color: white;
+        background-color: $cl-primary;
+        padding: 5px 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        img {
+          margin-right: 5px;
+        }
+      }
+
+      input {
+        max-width: 314px;
+        height: 44px;
+        margin: 20px 0;
+
+        &:last-of-type {
+          height: 120px;
+        }
+      }
+
+      .btn {
+        font-size: 26px;
+        text-decoration: none;
+        color: #4e484c;
+        margin: 10px 0 20px;
+        @media (min-width: 1024px) {
+          align-self: flex-end;
+          margin-right: 70px;
+        }
+      }
+
+      .main-content {
+        border: 1px black solid;
+        padding-left: 20px;
+        margin: 20px 0;
+        @media (min-width: 1024px) {
+          max-width: 280px;
+        }
+
+        p {
+          line-height: 1.5rem;
+        }
+      }
+
+      .main-photos {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        margin: 10px auto;
+        padding: 0;
+        @media (min-width: 768px) {
+          flex-direction: row;
+          justify-content: space-around;
+          margin: 10px 0;
+        }
+        @media (min-width: 1024px) {
+          flex-flow: wrap;
+        }
+
+        .footer-item {
+          margin: 5px 0;
+          border: 1px solid black;
+
+          a {
+            img {
+              width: 165px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.sitemap {
+  background-color: $cl-primary;
+
+  .sitemap-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    @media(min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    @media (min-width: 1024px) {
+      flex-wrap: nowrap;
+      max-width: 1160px;
+      margin: auto;
+    }
+
+    .list-item-container {
+      padding: 0;
+      text-align: left;
+      @media(min-width: 768px) {
+        width: 25%;
+        margin: 10px;
+      }
+
+      .item-list {
+        a {
+          text-decoration: none;
+          color: white;
+          font-size: 16px;
+          line-height: 24px;
+          transition: 0.3s;
+
+          &:hover {
+            color: $cl-secondary;
+          }
+        }
+      }
+    }
+  }
+}
+
+.copy {
+  background-color: $cl-primary;
+
+  .footer-copy-wrapper {
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      max-width: 1160px;
+      margin: auto;
+    }
+
+    .copy-typo {
+      color: white;
+      font-size: 14px;
+    }
+
+    .copy-sec-typo {
+      color: white;
+      font-size: 14px;
+
+      a {
+        text-decoration: none;
+        color: white;
+        transition: 0.3s;
+
+        &:hover {
+          color: $cl-secondary;
+        }
+      }
+    }
+  }
+}
