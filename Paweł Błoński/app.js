@@ -3,9 +3,8 @@ $('.slide-container').slick({
   slidesToScroll: 1,
   centerMode: true,
   variableWidth: true,
-  centerPadding: "10px",
-  prevArrow: $('.left-arrow-slide'),
-  nextArrow: $('.right-arrow-slide'),
+  prevArrow: '.left-arrow-slide',
+  nextArrow: '.right-arrow-slide',
   responsive: [{
       breakpoint: 1024,
       settings: {
@@ -27,8 +26,8 @@ $('.slide-container-second').slick({
   slidesToScroll: 1,
   centerMode: true,
   variableWidth: true,
-  prevArrow: $('.left-arrow-slide-inv'),
-  nextArrow: $('.right-arrow-slide-inv'),
+  prevArrow: '.left-arrow-slide-inv',
+  nextArrow: '.right-arrow-slide-inv',
   responsive: [{
       breakpoint: 1024,
       settings: {
@@ -50,8 +49,8 @@ $('.slide-container-third').slick({
   slidesToScroll: 1,
   centerMode: true,
   variableWidth: true,
-  prevArrow: $('.left-arrow-slide-inv-copy'),
-  nextArrow: $('.right-arrow-slide-inv-copy'),
+  prevArrow: '.left-arrow-slide-inv-copy',
+  nextArrow: '.right-arrow-slide-inv-copy',
   responsive: [{
       breakpoint: 1024,
       settings: {

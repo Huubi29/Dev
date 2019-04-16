@@ -189,6 +189,10 @@ body {
 .pictures-slide {
   background-color: $cl-primary;
 
+  .picture-slide-item {
+    margin: 8px;
+  }
+
   .picture-slide-wrapper {
     display: flex;
     flex-direction: row;
